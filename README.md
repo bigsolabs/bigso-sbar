@@ -12,6 +12,16 @@ curl -fsSL https://raw.githubusercontent.com/bigsolabs/bigso-sbar/main/scripts/i
 
 El instalador descarga el código de `main`, compila la app en tu Mac y la instala en `~/Applications/ScriptBar.app`; no requiere `sudo`. Después la abre. Para instalar otra rama, puedes definir `SCRIPTBAR_REF` antes de ejecutar el instalador, por ejemplo: `curl -fsSL https://raw.githubusercontent.com/bigsolabs/bigso-sbar/main/scripts/install.sh | SCRIPTBAR_REF=nombre-rama bash`. Revisa el script antes de ejecutarlo si quieres inspeccionar qué hará.
 
+## Instalar la skill de Hermes (opcional)
+
+Si usas Hermes Agent, puedes instalar por separado el conocimiento para que el agente lo cargue cuando la tarea trate de ScriptBar:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/bigsolabs/bigso-sbar/main/scripts/install-hermes-skill.sh | bash
+```
+
+La skill queda instalada en Hermes, no dentro de la app ni en otros agentes. No se instala automáticamente; si usas otro agente, copia `skills/scriptbar/SKILL.md` a su ubicación de skills. Para instalar desde otra rama, define `SCRIPTBAR_REF` en el comando como en el instalador de la app.
+
 ## Crear la app
 
 Requiere macOS 13 o posterior y Swift 5.9 o posterior.
