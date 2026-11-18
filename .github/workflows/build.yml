@@ -15,7 +15,7 @@ jobs:
       - name: Select Swift
         run: swift --version
       - name: Check installer syntax
-        run: bash -n scripts/install.sh scripts/install-hermes-skill.sh
+        run: bash -n scripts/install.sh && bash -n scripts/install-hermes-skill.sh
       - name: Install from source archive
         env:
           SCRIPTBAR_REF: ${{ github.head_ref || github.ref_name }}
