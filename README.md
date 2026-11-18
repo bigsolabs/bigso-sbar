@@ -22,6 +22,24 @@ curl -fsSL https://raw.githubusercontent.com/bigsolabs/bigso-sbar/main/scripts/i
 
 La skill queda instalada en Hermes, no dentro de la app ni en otros agentes. No se instala automáticamente; si usas otro agente, copia `skills/scriptbar/SKILL.md` a su ubicación de skills. Para instalar desde otra rama, define `SCRIPTBAR_REF` en el comando como en el instalador de la app.
 
+## Instalar la skill en GitHub Copilot o Codex
+
+El GitHub CLI ofrece `gh skill install` para ambos agentes. Los scripts de abajo instalan la skill en el scope de usuario por defecto; configura `SCRIPTBAR_SKILL_SCOPE=project` para instalarla en el repo actual. Si GitHub CLI avisa que la skill no está verificada, revisa su contenido antes de usarla.
+
+GitHub Copilot:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/bigsolabs/bigso-sbar/main/scripts/install-copilot-skill.sh | bash
+```
+
+Codex:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/bigsolabs/bigso-sbar/main/scripts/install-codex-skill.sh | bash
+```
+
+En ambos casos necesitas GitHub CLI 2.90.0 o posterior; `gh skill` está en public preview. Para fijar una versión/commit concreto, define `SCRIPTBAR_SKILL_PIN`; para el scope de proyecto, ejecuta el instalador desde el repo y reemplaza el `| bash` final por `| SCRIPTBAR_SKILL_SCOPE=project bash`. En un repo, project scope usa `.agents/skills` y una sola instalación la comparte Copilot y Codex. Si ya está instalada, el script no la sobrescribe; actualízala con `gh skill update scriptbar`.
+
 ## Crear la app
 
 Requiere macOS 13 o posterior y Swift 5.9 o posterior.
