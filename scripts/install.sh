@@ -56,4 +56,6 @@ if ! mv "$STAGED_APP" "$DESTINATION"; then
 fi
 
 echo "Instalado en: $DESTINATION"
-open "$DESTINATION"
+if [[ "${SCRIPTBAR_NO_OPEN:-0}" != "1" ]]; then
+  open "$DESTINATION"
+fi

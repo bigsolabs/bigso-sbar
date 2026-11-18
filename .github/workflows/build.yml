@@ -16,7 +16,11 @@ jobs:
         run: swift --version
       - name: Check installer syntax
         run: bash -n scripts/install.sh
-      - name: Build app bundle
-        run: ./scripts/build-app.sh
-      - name: Verify app bundle metadata
-        run: /usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' .build/ScriptBar.app/Contents/Info.plist
+      - name: Install from source archive
+        env:
+          SCRIPTBAR_REF: ${{ github.head_ref || github.ref_name }}
+          SCRIPTBAR_INSTALL_DIR: ${{ runner.temp }}/scriptbar-apps
+          SCRIPTBAR_NO_OPEN: "1"
+        run: bash scripts/install.sh
+      - name: Verify installed app metadata
+        run: /usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$RUNNER_TEMP/scriptbar-apps/ScriptBar.app/Contents/Info.plist"
