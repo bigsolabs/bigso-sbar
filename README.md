@@ -2,6 +2,16 @@
 
 Un lanzador pequeño para la barra de menús de macOS. Cada acción ejecuta un programa con argumentos y una carpeta de trabajo elegidos por ti. Por ejemplo, `cd ../../ && node main.mjs` se configura como `executable: "node"`, `arguments: ["main.mjs"]` y `workingDirectory: "../../"`.
 
+## Instalar desde Terminal
+
+En macOS 13 o posterior, con Swift 5.9 o posterior instalado, ejecuta:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/bigsolabs/bigso-sbar/main/scripts/install.sh | bash
+```
+
+El instalador descarga el código de `main`, compila la app en tu Mac y la instala en `~/Applications/ScriptBar.app`; no requiere `sudo`. Después la abre. Para instalar otra rama, puedes definir `SCRIPTBAR_REF` antes de ejecutar el instalador, por ejemplo: `curl -fsSL https://raw.githubusercontent.com/bigsolabs/bigso-sbar/main/scripts/install.sh | SCRIPTBAR_REF=nombre-rama bash`. Revisa el script antes de ejecutarlo si quieres inspeccionar qué hará.
+
 ## Crear la app
 
 Requiere macOS 13 o posterior y Swift 5.9 o posterior.
