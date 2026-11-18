@@ -11,7 +11,7 @@ Requiere macOS 13 o posterior y Swift 5.9 o posterior.
 open .build/ScriptBar.app
 ```
 
-La app aparece en la barra de menús y no añade un icono al Dock. El lanzador no inicia scripts automáticamente al abrirse.
+La app aparece en la barra de menús y no añade un icono al Dock. El lanzador no inicia scripts automáticamente al abrirse. GitHub Actions compila el bundle en macOS en cada push y pull request.
 
 ## Configurar scripts
 
