@@ -13,13 +13,7 @@ ScriptBar is a macOS menu-bar app that launches user-configured programs. It run
 
 ## Install
 
-ScriptBar requires macOS 13 or later and Swift 5.9 or later. Install the app from Terminal with:
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/bigsolabs/bigso-sbar/main/scripts/install.sh | bash
-```
-
-The installer builds from source and places the app in `~/Applications/ScriptBar.app`. Do not bypass macOS security warnings or claim the app is signed/notarized unless that has been verified for the specific release.
+ScriptBar requires macOS 13 or later and Swift 5.9 or later. The project README documents a one-command installer that downloads the source and builds the app locally. Review the installer and explain that it executes downloaded project code before asking the user to run it; do not bypass macOS security warnings or claim the app is signed/notarized unless verified for the specific release.
 
 ## Configure scripts
 
